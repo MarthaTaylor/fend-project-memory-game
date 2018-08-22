@@ -26,20 +26,21 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    font-family: 'Modern Antiqua', cursive, Pacifico;
 }
 
 h1 {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 300;
+       font-weight: 300;
+       margin-top: 15px;
+       margin-bottom: 15px
 }
 
-/*
- * Styles for the deck of cards
- */
+/***********************************************************
+**** Styles for the deck of cards the back of the cards****/
 
 .deck {
     width: 660px;
-    min-height: 680px;
+    min-height: 640px;
     background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
     padding: 32px;
     border-radius: 10px;
@@ -55,6 +56,7 @@ h1 {
     height: 125px;
     width: 125px;
     background: #2e3d49;
+/* font size is 0 this creates the background effect and the hides the card symbols which is increased when the cards are flipped to reveal the symbols*/   
     font-size: 0;
     color: #ffffff;
     border-radius: 8px;
@@ -62,7 +64,7 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+    box-shadow: 5px 6px 20px 0 rgba(49, 119, 43, 1.);
 }
 
 .deck .card.open {
@@ -81,21 +83,32 @@ h1 {
     font-size: 33px;
 }
 
-/*
- * Styles for the Score Panel
- */
+/* pointer events prevent the js functions so it will disable the click function add it to js code when you add classes to an open card to implement it*/
+
+.deck .card.disable {
+    pointer-events: none;       
+}
+
+
+
+ /********************************************************************
+ ****TODO add Styles for the Score Panel and star element ratings****/
 
 .score-panel {
     text-align: left;
-    width: 345px;
+    width: 475px;
     margin-bottom: 10px;
+    font-size: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 .score-panel .stars {
     margin: 0;
     padding: 0;
     display: inline-block;
-    margin: 0 5px 0 0;
+    margin: 0 5px 0 0;   
 }
 
 .score-panel .stars li {
@@ -106,4 +119,82 @@ h1 {
 .score-panel .restart {
     float: right;
     cursor: pointer;
+}
+
+
+
+/*****************************************************************************************************************************
+****THE MODAL BOX                                                                                                            *
+****Code reuse and used as an example to make the modal box comes from 2 sources                                             *
+****https://www.w3schools.com/howto/howto_css_modals.asp and https://github.com/DanielaKuester/Udacity-Project03-Memory-Game*/
+
+/* TODO  add a Modal Popup on game end*/
+#modal {
+    display: none;    
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100vw; 
+    height: 100vh;
+    overflow: auto; /* Enable scroll feature if needed */
+    background-color: rgba(0,0,0,0.6);
+}
+
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    left: 50%;
+    top: 50%;
+    width: 320px;
+    height: 320px;
+    border-radius: 17px;
+    font-size: 1.3em;
+    font-family: 'Modern Antiqua', cursive, Pacifico;
+     }
+
+/* TODO: The X Close Button for the modal */
+.closeX {
+    color: #02b3e4;
+    float: right;
+    font-size: 3em;
+    font-weight: bold;
+}
+
+.closeX:hover,
+.closeX:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* TODO  style for cloned score panel results on the Modal Popup*/
+#modal-scorepanel {
+        font-size: 1.2em;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        font-family: 'Modern Antiqua', cursive, Pacifico;
+}
+
+/* TODO: The Play Again Button for the modal */
+.playAgain {
+        background-color: #02b3e4;
+        font-size: 22px;
+        font-weight: bold;
+        color: #000000;
+        border: #02b;
+        border-radius: 12px;
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.3), 0 6px 20px 0 rgba(0,0,0,1);
+        font-family: 'Modern Antiqua', cursive, Pacifico;
+        min-height: 48px;
+        min-width: 48px;
+}
+
+.playAgain:hover, .playAgain:focus {
+        cursor: pointer;
+        color: #fff;
 }

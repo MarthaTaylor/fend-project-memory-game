@@ -1,85 +1,84 @@
+<!----------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------Author: Martha Taylor-------------------------------------------------------------------------
+-----------------------------------------Project 3 The Memory Game-----------------------------------------------------------------------
+Code reused in my project in bits and pieces come from the from the following sources:
+The starter code for this project comes from the following [Udacity Memory Game repository](https://github.com/udacity/fend-project-memory-game) by Richard Kalehoff. I cloned it to my repo.
+Some code and guidance taken from the [Memory Game Study Jam](https://youtu.be/G8J13lmApkQ?t=9) by Yayha Elharony. Thanks for explaining with such clarity and attention to detail.
+Some code from Daniela Kuester https://github.com/DanielaKuester/Udacity-Project03-Memory-Game and the tutorial https://scotch.io/tutorials/how-to-build-a-memory-matching-game-in-javascript by Sandra Israel-Ovirih and W3Schools https://www.w3schools.com/howto/howto_css_modals.asp all assisted me to optimise the build of the game bit by bit.
+The [Memory Game Webinars](https://youtu.be/_rUH-sEs68Y?t=2) by Mike Wales and Ryan Waite (https://www.youtube.com/) 
+------------------------------------------------------------------------------------------------------------------------------------------>
+
 <!doctype html>
 <html lang="en">
 <head>
+
     <meta charset="utf-8">
     <title>Matching Game</title>
-    <meta name="description" content="">
+    <!-- Important for SEO to add a short description with keywords in the content attribute -->
+    <meta name="description" content="A Memory Game to test your concentration made with Udacity by Martha Taylor">
+    <!--add meta viewport to make website fully responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- make the website compatible to Internet Explorer-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <!--  add fonts for styling -->
     <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Modern+Antiqua" rel="stylesheet">
     <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Coda">
+    <!-- links to style sheets -->
     <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
-
+    <!--main div that contains for styling with CSS Flexbox to add the gameboard structure/playing to the area of the game-->
     <div class="container">
+
+        <!--Game Name displayed here -->
         <header>
             <h1>Matching Game</h1>
         </header>
 
+         <!--Rating of a players ability will be displayed here in the score panel-->
         <section class="score-panel">
         	<ul class="stars">
+        		<!-- <li><i class="fa fa-star"></i></li>
         		<li><i class="fa fa-star"></i></li>
-        		<li><i class="fa fa-star"></i></li>
-        		<li><i class="fa fa-star"></i></li>
-        	</ul>
+        		<li><i class="fa fa-star"></i></li> -->
+        	</ul>         
 
-        	<span class="moves">3</span> Moves
 
+            <!--Number of moves will be displayed here --> 
+            <div> Moves : <span class="moves">  </span> </div>
+
+            <!--  the timer will display here -->
+            <div> Time : <span class="timer"> </span> </div>
+            <!--Restart button will be displayed here --> 
             <div class="restart">
-        		<i class="fa fa-repeat"></i>
+        		<i class="fa fa-repeat">  </i>
         	</div>
         </section>
 
+        <!--Deck list of 16 cards with there symbols will be placed inside this ul will be displayed here --> 
         <ul class="deck">
-            <li class="card">
-                <i class="fa fa-diamond"></i>
-            </li>
-            <li class="card">
-                <i class="fa fa-paper-plane-o"></i>
-            </li>
-            <li class="card match">
-                <i class="fa fa-anchor"></i>
-            </li>
-            <li class="card">
-                <i class="fa fa-bolt"></i>
-            </li>
-            <li class="card">
-                <i class="fa fa-cube"></i>
-            </li>
-            <li class="card match">
-                <i class="fa fa-anchor"></i>
-            </li>
-            <li class="card">
-                <i class="fa fa-leaf"></i>
-            </li>
-            <li class="card">
-                <i class="fa fa-bicycle"></i>
-            </li>
-            <li class="card">
-                <i class="fa fa-diamond"></i>
-            </li>
-            <li class="card">
-                <i class="fa fa-bomb"></i>
-            </li>
-            <li class="card">
-                <i class="fa fa-leaf"></i>
-            </li>
-            <li class="card">
-                <i class="fa fa-bomb"></i>
-            </li>
-            <li class="card open show">
-                <i class="fa fa-bolt"></i>
-            </li>
-            <li class="card">
-                <i class="fa fa-bicycle"></i>
-            </li>
-            <li class="card">
-                <i class="fa fa-paper-plane-o"></i>
-            </li>
-            <li class="card">
-                <i class="fa fa-cube"></i>
-            </li>
+                        
         </ul>
+
     </div>
+
+    <!--  Modal area information will be cloned here from the score panel to display resulys at the end of game in the modal -->
+    <div id="modal">
+        <div class="modal-content">
+                        
+            <span class="closeX"> &times; </span> 
+           
+            <h3> Congratulations! You win! </h3>  
+           
+            <div class="final-score"> </div>                  
+
+            <button class="playAgain"> Play again! </button>   
+        
+        </div>
+    </div>
+
 
     <script src="js/app.js"></script>
 </body>
