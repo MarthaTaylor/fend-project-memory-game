@@ -13,10 +13,11 @@ You must try and match each card with it's identical pair card. The aim of the g
 
 You get flippin and reap the rewards!
 
-##Play live online with the link below
-Click on this link to check out a preview https://marthataylor.github.io/fend-project-memory-game/.
+## Play live online with the link below
 
-##Instalation
+Click on this link to check out a preview and play a game on https://marthataylor.github.io/fend-project-memory-game/.
+
+## Instalation
 
 You only need the internet and a browser to run the game using the live link above.
 
@@ -24,7 +25,7 @@ However there are two other ways to play the game. You can download the Memory G
 1. Download the repository as a zip-file, extract it and open the index.html to run the Memory Game in your browser.
 2. You need your own github account and place to store your own repositories. Clone the repository with Git Bash: ```$ git clone https```
 
-##Credits and External Code used in the project
+## Credits and External Code used in the project
 
 The follwoing resources helped me to build and complete The Memory Game sending them due credits and thanks:
 
